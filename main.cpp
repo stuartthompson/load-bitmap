@@ -16,13 +16,13 @@
 // along with LoadBitmap. If not, see <http://www.gnu.org/licenses/>.
 
 #include <iostream>
-
 #include <GL/glew.h>
-
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include "Log.hpp"
+
 GLFWwindow* window;
 
-#include <glm/glm.hpp>
 using namespace glm;
 
 int main(void) {
@@ -54,6 +54,8 @@ int main(void) {
         glfwTerminate();
         return -1;
     }
+
+    LOG_DEBUG("Preparing to enter main loop.");
 
     // Set clear color to red
     glClearColor(1.0f, 0.0f, 0.0f, 0.0f);

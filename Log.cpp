@@ -54,7 +54,7 @@ std::string Log::GetTimestamp() {
 
 // Logs a message.
 void Log::LogMessage(
-	const char type,
+	const char level,
 	const std::string message,
 	const std::string method_name,
 	const std::string file_name,
@@ -65,11 +65,12 @@ void Log::LogMessage(
 
 	std::string timestamp = Log::GetTimestamp();
 
-	l << std::setw(2) << std::left << type
-		<< std::setw(12) << std::left << timestamp
-		<< std::setw(30) << std::left << method_name << ": "
-		<< std::setw(72) << std::left << message << " ("
-		<< std::setw(4) << line_number << ": " << file_name << ")" << std::endl;
+	l << std::setw(2) << std::left << level 				// Log level
+	  << std::setw(9) << std::left << timestamp				// Timestamp
+	  << "[" << file_name << ", " << line_number << "] "	// File name and line number
+	  << std::setw(20) << std::left << method_name			// Method name
+	  << std::setw(59) << std::left << message 				// Message
+	  << std::endl;
 
 	l.close();
 }
