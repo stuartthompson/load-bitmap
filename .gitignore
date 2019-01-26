@@ -3,3 +3,6 @@
 
 # Build output
 LoadBitmap
+
+# Log files
+log.txt
