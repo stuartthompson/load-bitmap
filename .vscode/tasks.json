@@ -6,7 +6,7 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "g++ Log.cpp main.cpp -o LoadBitmap -Iinclude -lGL -lGLEW -lglfw",
+            "command": "g++ Bitmap.cpp Log.cpp main.cpp -o LoadBitmap -Iinclude -lGL -lGLEW -lglfw",
             "group": {
                 "kind": "build",
                 "isDefault": true
